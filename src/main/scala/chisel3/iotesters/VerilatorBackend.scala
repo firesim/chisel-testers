@@ -137,12 +137,12 @@ class GenVerilatorCppHarness(writer: Writer, dut: Chisel.Module,
       try {
         node match {
           case mem: Chisel.MemBase[_] =>
-            writer.write(s"        for (size_t i = 0 ; i < ${mem.length} ; i++) {\n")
+/*            writer.write(s"        for (size_t i = 0 ; i < ${mem.length} ; i++) {\n")
             pushBack("signals", s"dut->${pathName}[i]", widthMap(node))
             writer.write(s"          ostringstream oss;\n")
             writer.write(s"""          oss << "${instanceName}" << "[" << i << "]";\n""")
             writer.write(s"          sim_data.signal_map[oss.str()] = $id + i;\n")
-            writer.write(s"        }\n")
+            writer.write(s"        }\n")*/
             id + mem.length
           case _ =>
 //            pushBack("signals", s"dut->$pathName", widthMap(node))
